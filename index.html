@@ -42,17 +42,29 @@
                         </div>
                         <div class="list-amount-show-none">
                             <ul class="list-amount">
-                                <li class="currency-item">
+                                <li
+                                    class="currency-item-am"
+                                    onclick="showCurr('USD')"
+                                >
                                     <img
                                         class="list-img"
-                                        id="list-image-flag"
                                         src="https://currencyfreaks.com/photos/flags/usd.png"
                                     />
-                                    <span id="list-currency"> USD</span>
+                                    <span class="list-currency"> USD</span>
                                     <span>-</span>
-                                    <span id="list-currency-name">
-                                        United States Dollar</span
-                                    >
+                                    <span> United States Dollar</span>
+                                </li>
+                                <li
+                                    class="currency-item-am"
+                                    onclick="showCurr('EUR')"
+                                >
+                                    <img
+                                        class="list-img"
+                                        src="https://currencyfreaks.com/photos/flags/eur.png"
+                                    />
+                                    <span class="list-currency"> EUR</span>
+                                    <span>-</span>
+                                    <span> European</span>
                                 </li>
                             </ul>
                         </div>
@@ -82,29 +94,31 @@
                         </div>
                         <div class="list-convert-show-none">
                             <ul class="list-convert">
-                                <li class="currency-item">
+                                <li
+                                    class="currency-item-conv"
+                                    onclick="showConvCurr('PKR')"
+                                >
                                     <img
                                         class="list-img"
                                         id="list-image-flag"
-                                        src="https://currencyfreaks.com/photos/flags/usd.png"
+                                        src="https://currencyfreaks.com/photos/flags/pkr.png"
                                     />
-                                    <span id="list-currency"> USD</span>
+                                    <span class="list-currency"> PKR</span>
                                     <span>-</span>
-                                    <span id="list-currency-name">
-                                        United States Dollar</span
-                                    >
+                                    <span> Pakistan Kruna</span>
                                 </li>
-                                <li class="currency-item">
+                                <li
+                                    class="currency-item-conv"
+                                    onclick="showConvCurr('CAD')"
+                                >
                                     <img
                                         class="list-img"
-                                        id="list-image-flag2"
-                                        src="https://currencyfreaks.com/photos/flags/usd.png"
+                                        id="list-image-flag"
+                                        src="https://currencyfreaks.com/photos/flags/cad.png"
                                     />
-                                    <span id="list-currency2"> USD</span>
+                                    <span class="list-currency"> CAD</span>
                                     <span>-</span>
-                                    <span id="list-currency-nam23">
-                                        United States Dollar</span
-                                    >
+                                    <span> Canadian Dollar</span>
                                 </li>
                             </ul>
                         </div>

@@ -114,7 +114,8 @@ body {
     visibility: hidden;
 }
 
-#exchange .exchange-wrapper .currency-item {
+#exchange .exchange-wrapper .currency-item-am,
+#exchange .exchange-wrapper .currency-item-conv {
     cursor: pointer;
     list-style-type: none;
     display: flex;
@@ -124,7 +125,8 @@ body {
     padding: 0.3rem;
     border-radius: 0.5rem;
 }
-#exchange .exchange-wrapper .currency-item:hover {
+#exchange .exchange-wrapper .currency-item-am:hover,
+#exchange .exchange-wrapper .currency-item-conv:hover {
     background-color: rgb(245, 240, 240, 0.9);
     padding: 0.3rem;
     border-radius: 0.5rem;
