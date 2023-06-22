@@ -4,20 +4,115 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>convertFX - Ultimate Currency Converter</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
         <link rel="stylesheet" href="./assets/css/exchange.css" />
         <script defer src="./assets/scripts/exchange.js"></script>
     </head>
     <body>
         <section id="exchange">
-            <div class="container">
-                <div class="exchange-image"></div>
-                <div class="exchange-container">
-                    <div class="exchange-amount"></div>
-                    <div class="exchange-swap"></div>
-                    <div class="exchange-convert"></div>
+            <div class="exchange-container">
+                <div class="exchange-image">
+                    <img src="./assets/images/exchange-image.png" />
+                </div>
+                <div class="exchange-wrapper">
+                    <div class="exchange-amount">
+                        <p>Amount</p>
+                        <div class="current-ex-wrap">
+                            <div
+                                class="current-select"
+                                onclick="dropdownAmount()"
+                            >
+                                <img
+                                    class="list-img"
+                                    id="ex-image-flag"
+                                    src="https://currencyfreaks.com/photos/flags/gbp.png"
+                                /><span id="ex-currency">GBP</span
+                                ><i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <input
+                                type="text"
+                                class="ex-amount-input"
+                                value="1000"
+                                id="ex-amount"
+                                size="20"
+                            />
+                        </div>
+                        <div class="list-amount-show-none">
+                            <ul class="list-amount">
+                                <li class="currency-item">
+                                    <img
+                                        class="list-img"
+                                        id="list-image-flag"
+                                        src="https://currencyfreaks.com/photos/flags/usd.png"
+                                    />
+                                    <span id="list-currency"> USD</span>
+                                    <span>-</span>
+                                    <span id="list-currency-name">
+                                        United States Dollar</span
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="exchange-amount">
+                        <p>Convert</p>
+                        <div class="current-ex-wrap">
+                            <div
+                                class="current-select"
+                                onclick="dropdownConvert()"
+                            >
+                                <img
+                                    class="list-img"
+                                    id="conv-image-flag"
+                                    src="https://currencyfreaks.com/photos/flags/usd.png"
+                                /><span id="conv-currency">USD</span
+                                ><i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <input
+                                type="text"
+                                class="ex-amount-input"
+                                value="1000"
+                                id="conv-amount"
+                                size="20"
+                            />
+                        </div>
+                        <div class="list-convert-show-none">
+                            <ul class="list-convert">
+                                <li class="currency-item">
+                                    <img
+                                        class="list-img"
+                                        id="list-image-flag"
+                                        src="https://currencyfreaks.com/photos/flags/usd.png"
+                                    />
+                                    <span id="list-currency"> USD</span>
+                                    <span>-</span>
+                                    <span id="list-currency-name">
+                                        United States Dollar</span
+                                    >
+                                </li>
+                                <li class="currency-item">
+                                    <img
+                                        class="list-img"
+                                        id="list-image-flag2"
+                                        src="https://currencyfreaks.com/photos/flags/usd.png"
+                                    />
+                                    <span id="list-currency2"> USD</span>
+                                    <span>-</span>
+                                    <span id="list-currency-nam23">
+                                        United States Dollar</span
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
                     <div class="exchange-rate">
-                        <p class="current-rate"></p>
-                        <p class="current-rate-value"></p>
+                        <p class="current-rate">Current rate:</p>
+                        <p class="current-rate-value">£1 = €1.1593</p>
                     </div>
                     <button class="exchange-button">Exchange</button>
                 </div>
