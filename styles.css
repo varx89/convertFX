@@ -1,0 +1,124 @@
+/* Basic global styling for the page */
+body {
+  text-align: center;
+  background-color: #f4f4f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Styling for the main header (h2 tag) */
+h2 {
+  color: #66cdaa;
+  padding: 20px 0 0 0;  
+  font-weight: 300;
+  letter-spacing: 1.2px;
+}
+
+/* Styling for the sub-header (h3 tag) */
+h3 {
+  color: #66cdaa;
+  padding: 0px 0 10px 0;  
+  font-weight: 300;
+  letter-spacing: 1.2px;
+  font-size: 17px;
+}
+
+/* Basic styling for the table */
+table {
+  width: 80%;
+  margin: 1em auto;
+  border-collapse: collapse;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid black;
+}
+
+/* Styling for the table header */
+thead {
+  background-color: #66cdaa; 
+  color: white;
+  border-bottom: 1px solid; 
+}
+
+/* Common styling for table headers (th) and table data cells (td) */
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid; 
+}
+
+/* Styling for the table footer */
+tfoot {
+  background-color: #f4f4f4; 
+  text-align: right;
+  padding: 10px 0;
+}
+
+/* Overriding border-bottom for the footer td elements */
+tfoot td {
+  border-bottom: none;
+}
+
+/* Basic styling for the button */
+button {
+  color: #66cdaa; 
+  border: 2px solid #66cdaa;
+  background-color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+/* Hover effect for the button */
+button:hover {
+  background-color: #66cdaa;
+  color: white;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  h2, h3 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  table {
+    width: 95%;
+  }
+
+  button {
+    padding: 10px 24px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h2, h3 {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  button {
+    padding: 8px 20px;
+    font-size: 1rem;
+    border-radius: 10px;
+  }
+}
