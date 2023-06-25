@@ -25,17 +25,59 @@ body {
     background-clip: padding-box;
     border-radius: 0.5rem;
 }
+#exchange {
+    display: flex;
+    justify-content: center;
+}
 
 #exchange .exchange-container {
-    margin: 2rem 6rem;
-    padding: 2rem 0px;
+    margin: 2rem 0px;
+    padding: 2rem 6rem;
     background-color: rgb(245, 240, 240, 0.9);
     border-radius: 0.5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+    width: fit-content;
+    min-width: 23rem;
+}
+@media screen and (max-width: 998px) {
+    #exchange .exchange-container {
+        margin: 2rem 0px;
+        padding: 2rem 0rem;
+        background-color: rgb(245, 240, 240, 0.9);
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 5rem;
+        width: fit-content;
+        min-width: 23rem;
+    }
+}
+#exchange .exchange-container .exchange-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#exchange .exchange-container .exchange-left p {
+    color: #4ca66b;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+#exchange .exchange-container .exchange-left #typewriter {
+    color: rgb(76, 166, 107, 0.8);
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-shadow: #807e7e 1px 0 20px;
 }
 #exchange .exchange-container .exchange-image img {
-    width: 30rem;
+    max-width: 30rem;
+    width: 24rem;
 }
 #exchange .exchange-container .exchange-wrapper {
     display: flex;
@@ -87,6 +129,7 @@ body {
     font-size: 1.2rem;
     border: 1px solid rgb(245, 240, 240, 0.9);
     border-radius: 0.5rem;
+    width: max-content;
 }
 
 #exchange .exchange-wrapper .list-amount,

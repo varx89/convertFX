@@ -32,7 +32,7 @@ const apiCurrencies = {
     ZAR: 'South African Rand',
 };
 
-const pAPI = {
+const apiEuro = {
     amount: 1.0,
     base: 'EUR',
     date: '2023-06-22',
@@ -69,6 +69,28 @@ const pAPI = {
         ZAR: 20.258,
     },
 };
+
+const showPairs = (first, second) => {
+    first = first.toString();
+    second = second.toString();
+
+    const baseAmImg = document.getElementById('ex-image-flag');
+    baseAmImg.setAttribute(
+        'src',
+        `https://currencyfreaks.com/photos/flags/${first.toLowerCase()}.png`
+    );
+    const baseExCurrency = document.getElementById('ex-currency');
+    baseExCurrency.textContent = first;
+
+    const baseConvImg = document.getElementById('conv-image-flag');
+    baseConvImg.setAttribute(
+        'src',
+        `https://currencyfreaks.com/photos/flags/${second.toLowerCase()}.png`
+    );
+    const baseConvCurrency = document.getElementById('conv-currency');
+    baseConvCurrency.textContent = second;
+};
+showPairs(apiEuro.base, 'USD');
 
 const dropdownAmount = () => {
     const listAmount = document.getElementsByClassName('list-amount')[0];

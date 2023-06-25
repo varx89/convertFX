@@ -14,9 +14,14 @@
     <body>
         <section id="exchange">
             <div class="exchange-container">
-                <div class="exchange-image">
-                    <img src="./assets/images/exchange-image.png" />
+                <div class="exchange-left">
+                    <p>Currency Exchange</p>
+                    <div class="exchange-image">
+                        <img src="./assets/images/exchange-image.png" />
+                    </div>
+                    <p id="typewriter">Excellent rates from 31 Currencies</p>
                 </div>
+
                 <div class="exchange-wrapper">
                     <div class="exchange-amount">
                         <p>Amount</p>
@@ -28,8 +33,8 @@
                                 <img
                                     class="list-img"
                                     id="ex-image-flag"
-                                    src="https://currencyfreaks.com/photos/flags/gbp.png"
-                                /><span id="ex-currency">GBP</span
+                                    src="https://currencyfreaks.com/photos/flags/eur.png"
+                                /><span id="ex-currency">EUR</span
                                 ><i class="fa-solid fa-chevron-down"></i>
                             </div>
                             <input
@@ -37,34 +42,22 @@
                                 class="ex-amount-input"
                                 value="1000"
                                 id="ex-amount"
-                                size="20"
+                                size="10"
                             />
                         </div>
                         <div class="list-amount-show-none">
                             <ul class="list-amount">
                                 <li
                                     class="currency-item-am"
-                                    onclick="showCurr('USD')"
+                                    onclick="showCurr('GBP')"
                                 >
                                     <img
                                         class="list-img"
-                                        src="https://currencyfreaks.com/photos/flags/usd.png"
+                                        src="https://currencyfreaks.com/photos/flags/gbp.png"
                                     />
-                                    <span class="list-currency"> USD</span>
+                                    <span class="list-currency"> GBP</span>
                                     <span>-</span>
-                                    <span> United States Dollar</span>
-                                </li>
-                                <li
-                                    class="currency-item-am"
-                                    onclick="showCurr('EUR')"
-                                >
-                                    <img
-                                        class="list-img"
-                                        src="https://currencyfreaks.com/photos/flags/eur.png"
-                                    />
-                                    <span class="list-currency"> EUR</span>
-                                    <span>-</span>
-                                    <span> European</span>
+                                    <span class="ex-name"> British Pounds</span>
                                 </li>
                             </ul>
                         </div>
@@ -89,24 +82,11 @@
                                 class="ex-amount-input"
                                 value="1000"
                                 id="conv-amount"
-                                size="20"
+                                size="10"
                             />
                         </div>
                         <div class="list-convert-show-none">
                             <ul class="list-convert">
-                                <li
-                                    class="currency-item-conv"
-                                    onclick="showConvCurr('PKR')"
-                                >
-                                    <img
-                                        class="list-img"
-                                        id="list-image-flag"
-                                        src="https://currencyfreaks.com/photos/flags/pkr.png"
-                                    />
-                                    <span class="list-currency"> PKR</span>
-                                    <span>-</span>
-                                    <span> Pakistan Kruna</span>
-                                </li>
                                 <li
                                     class="currency-item-conv"
                                     onclick="showConvCurr('CAD')"
@@ -125,8 +105,8 @@
                     </div>
 
                     <div class="exchange-rate">
-                        <p class="current-rate">Current rate:</p>
-                        <p class="current-rate-value">£1 = €1.1593</p>
+                        <p>Current rate:</p>
+                        <p id="current-rate-value">£1 = €1.1593</p>
                     </div>
                     <button class="exchange-button">Exchange</button>
                 </div>
