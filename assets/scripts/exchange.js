@@ -1,3 +1,12 @@
+const currencyFormatter = (money, symbol) => {
+    let formatCurrency = new Intl.NumberFormat(undefined, {
+        style: 'currency',
+        maximumSignificantDigits: 3,
+        currency: symbol,
+    });
+    return formatCurrency.format(+money);
+};
+
 const getCurrencies = async () => {
     const host = 'api.frankfurter.app';
     const response = await fetch(`https://${host}/currencies`);
@@ -44,7 +53,10 @@ const showPairs = async (first, second, value = 1000) => {
     baseConvCurrency.textContent = second;
 
     const currentRateValue = document.getElementById('current-rate-value');
-    currentRateValue.textContent = `1 = ${await getValueRate(first, second)}`;
+    currentRateValue.textContent = `${currencyFormatter(
+        1,
+        first
+    )} = ${currencyFormatter(await getValueRate(first, second), second)}`;
 
     const exInput = document.getElementById('ex-amount');
     exInput.value = value;
