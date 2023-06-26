@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Popular pairs</title>
+        <link rel="stylesheet" href="./popular.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body>
+        <section id="popular">
+            <div class="popular-container">
+                <p class="popular-title">Most Popular Pairs</p>
+                <div class="grid-container">
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('GBP', 'EUR')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/gbp.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/eur.png"
+                        />
+                        <span class="pop-pairs"
+                            >GBP
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            EUR</span
+                        >
+                    </a>
+
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('EUR', 'USD')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/eur.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/usd.png"
+                        />
+                        <span class="pop-pairs"
+                            >EUR
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            USD</span
+                        >
+                    </a>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('EUR', 'RON')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/eur.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/ron.png"
+                        />
+                        <span class="pop-pairs"
+                            >EUR
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            RON</span
+                        >
+                    </a>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('SEK', 'EUR')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/sek.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/eur.png"
+                        />
+                        <span class="pop-pairs"
+                            >SEK
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            EUR</span
+                        >
+                    </a>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('JPY', 'USD')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/jpy.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/usd.png"
+                        />
+                        <span class="pop-pairs"
+                            >JPY
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            USD</span
+                        >
+                    </a>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('CZK', 'EUR')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/czk.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/eur.png"
+                        />
+                        <span class="pop-pairs"
+                            >CZK
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            EUR</span
+                        >
+                    </a>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('EUR', 'HUF')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/eur.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/huf.png"
+                        />
+                        <span class="pop-pairs"
+                            >EUR
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            HUF</span
+                        >
+                    </a>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('TRY', 'EUR')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/try.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/eur.png"
+                        />
+                        <span class="pop-pairs"
+                            >TRY
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            EUR</span
+                        >
+                    </a>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('GBP', 'CAD')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/gbp.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/cad.png"
+                        />
+                        <span class="pop-pairs"
+                            >GBP
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            CAD</span
+                        >
+                    </a>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('BRL', 'USD')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/brl.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/usd.png"
+                        />
+                        <span class="pop-pairs"
+                            >BRL
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            USD</span
+                        >
+                    </a>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('AUD', 'HKD')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/aud.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/hkd.png"
+                        />
+                        <span class="pop-pairs"
+                            >AUD
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            HKD</span
+                        >
+                    </a>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('MXN', 'BRL')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/mxn.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/brl.png"
+                        />
+                        <span class="pop-pairs"
+                            >MXN
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            BRL</span
+                        >
+                    </a>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

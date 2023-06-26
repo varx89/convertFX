@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>convertFX - Ultimate Currency Converter</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+        <link rel="stylesheet" href="./assets/css/exchange.css" />
+        <script defer src="./assets/scripts/exchange.js"></script>
+    </head>
+    <body>
+        <section id="exchange">
+            <div class="exchange-container">
+                <div class="exchange-left">
+                    <p>Currency Exchange</p>
+                    <div class="exchange-image">
+                        <img src="./assets/images/exchange-image.png" />
+                    </div>
+                    <p id="typewriter">Excellent rates from 31 Currencies</p>
+                </div>
+
+                <div class="exchange-wrapper">
+                    <div class="exchange-amount">
+                        <p>Amount</p>
+                        <div class="current-ex-wrap">
+                            <div
+                                class="current-select"
+                                onclick="dropdownAmount()"
+                            >
+                                <img
+                                    class="list-img"
+                                    id="ex-image-flag"
+                                    src="https://currencyfreaks.com/photos/flags/eur.png"
+                                /><span id="ex-currency">EUR</span
+                                ><i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <input
+                                type="text"
+                                class="ex-amount-input"
+                                value="1000"
+                                id="ex-amount"
+                                size="10"
+                            />
+                        </div>
+                        <div class="list-amount-show-none">
+                            <ul class="list-amount">
+                                <!-- <li
+                                    class="currency-item-am"
+                                    onclick="showCurr('GBP')"
+                                >
+                                    <img
+                                        class="list-img"
+                                        src="https://currencyfreaks.com/photos/flags/gbp.png"
+                                    />
+                                    <span class="list-currency"> GBP</span>
+                                    <span>-</span>
+                                    <span class="ex-name"> British Pounds</span>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="exchange-amount">
+                        <p>Convert</p>
+                        <div class="current-ex-wrap">
+                            <div
+                                class="current-select"
+                                onclick="dropdownConvert()"
+                            >
+                                <img
+                                    class="list-img"
+                                    id="conv-image-flag"
+                                    src="https://currencyfreaks.com/photos/flags/usd.png"
+                                /><span id="conv-currency">USD</span
+                                ><i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <input
+                                type="text"
+                                class="ex-amount-input"
+                                value="1000"
+                                id="conv-amount"
+                                size="10"
+                            />
+                        </div>
+                        <div class="list-convert-show-none">
+                            <ul class="list-convert">
+                                <!-- <li
+                                    class="currency-item-conv"
+                                    onclick="showConvCurr('CAD')"
+                                >
+                                    <img
+                                        class="list-img"
+                                        src="https://currencyfreaks.com/photos/flags/cad.png"
+                                    />
+                                    <span class="list-currency"> CAD</span>
+                                    <span>-</span>
+                                    <span> Canadian Dollar</span>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="exchange-rate">
+                        <p>Current rate:</p>
+                        <p id="current-rate-value">£1 = €1.1593</p>
+                    </div>
+                    <button class="exchange-button">Exchange</button>
+                </div>
+            </div>
+        </section>
+        <div>
+            <a href="#exchange" onclick="showPairs('USD', 'RON')"
+                >Show USD RON</a
+            >
+        </div>
+    </body>
+</html>
