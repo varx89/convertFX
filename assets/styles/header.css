@@ -1,37 +1,52 @@
-body {
+:root {
+    --header-color: rgba(73, 70, 70, 0.8);
+    --title-color: white;
+    --robot-color: #1e2020;
+    --writing-color: rgb(136, 133, 133);
+    --robot-border: rgba(67, 68, 68, 0.725);
+}
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-  }
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-  header {
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+header {
     background-color: #dcdcdc;
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
+    /* position: fixed; */
+    flex-wrap: wrap;
     top: 0;
     left: 0;
     right: 0;
-  }
+}
 
-  .logo {
+.logo {
     display: flex;
     align-items: center;
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
     font-size: 20px;
-  }
+}
 
-  .logo img {
+.logo img {
     height: 30px;
     width: auto;
     margin-right: 10px;
-  }
+    margin-left: 10px;
+}
 
-  .buttonsHS {
+.buttonsHS {
     background-color: #dcdcdc;
     color: #ffffff;
     display: flex;
@@ -43,15 +58,16 @@ body {
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease;
-  }
+    text-shadow: #66cdaa 1px 0 10px;
+}
 
-  .buttons {
+.buttons {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
-  .button {
+.button {
     background-color: #dcdcdc;
     color: #ffffff;
     padding: 8px 12px;
@@ -60,11 +76,11 @@ body {
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease;
-  }
-  .buttonsHS:hover {
+}
+.buttonsHS:hover {
     color: #66cdaa;
-  }
+}
 
-  .button:hover {
+.button:hover {
     background-color: #66cdaa;
-  }
+}

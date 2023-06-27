@@ -1,42 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./convertFX-exchange-andrei/assets/scripts/exchange.js"></script>
-    <script src="./convertFX-live_exchange_rate-alberto/convertFX/script.js"></script>
-    <link rel="stylesheet" href="./styles.css">
-    <title>ConvertFx</title>
-</head>
-<body>
-    
-    <section id="header">
-        <header>
-            <a href="#" class="logo">
-              <img src="icon.png" alt="Logo" />
-              Exchange.io
-            </a>
-      
-            <div class="buttonsHS">
-              <a href="#" class="buttonsHS">Home</a>
-              <a href="#" class="buttonsHS">Exchange</a>
-              <a href="#" class="buttonsHS">Popular Pairs</a>
-            </div>
-      
-            <div class="buttons">
-              <a href="#" class="button">Support</a>
-              <a href="#" class="button">Contact </a>
-            </div>
-          </header>
-    </section>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/styles/header.css" />
+        <link rel="stylesheet" href="./assets/styles/exchange.css" />
+        <link rel="stylesheet" href="./assets/styles/live-exchange.css" />
+        <link rel="stylesheet" href="./assets/styles/popular.css" />
+        <link rel="stylesheet" href="./assets/styles/footer.css" />
 
-    
-    <section id="exchange">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <script src="./assets/scripts/live.js"></script>
+        <title>convertFX - Ultimate Currency Converter</title>
+    </head>
+    <body>
+        <section id="header">
+            <header>
+                <a href="#" class="logo">
+                    <img src="./assets/images/logo.webp" alt="Logo" />
+                </a>
+
+                <div class="buttonsHS">
+                    <a href="#" class="buttonsHS">Home</a>
+                    <a href="#" class="buttonsHS">Exchange</a>
+                    <a href="#" class="buttonsHS">Popular Pairs</a>
+                </div>
+
+                <div class="buttons">
+                    <a href="#" class="button">Support</a>
+                    <a href="#" class="button">Contact </a>
+                </div>
+            </header>
+        </section>
+
+        <section id="exchange">
             <div class="exchange-container">
                 <div class="exchange-left">
-                    <p>Currency Exchange</p>
+                    <p>convertFX Currency Exchange</p>
                     <div class="exchange-image">
-                        <img src="./convertFX-exchange-andrei/assets/images/exchange-image.png" />
+                        <img src="./assets/images/exchange-image.png" />
                     </div>
                     <p id="typewriter">Excellent rates from 31 Currencies</p>
                 </div>
@@ -65,20 +74,7 @@
                             />
                         </div>
                         <div class="list-amount-show-none">
-                            <ul class="list-amount">
-                                <!-- <li
-                                    class="currency-item-am"
-                                    onclick="showCurr('GBP')"
-                                >
-                                    <img
-                                        class="list-img"
-                                        src="https://currencyfreaks.com/photos/flags/gbp.png"
-                                    />
-                                    <span class="list-currency"> GBP</span>
-                                    <span>-</span>
-                                    <span class="ex-name"> British Pounds</span>
-                                </li> -->
-                            </ul>
+                            <ul class="list-amount"></ul>
                         </div>
                     </div>
 
@@ -105,20 +101,7 @@
                             />
                         </div>
                         <div class="list-convert-show-none">
-                            <ul class="list-convert">
-                                <!-- <li
-                                    class="currency-item-conv"
-                                    onclick="showConvCurr('CAD')"
-                                >
-                                    <img
-                                        class="list-img"
-                                        src="https://currencyfreaks.com/photos/flags/cad.png"
-                                    />
-                                    <span class="list-currency"> CAD</span>
-                                    <span>-</span>
-                                    <span> Canadian Dollar</span>
-                                </li> -->
-                            </ul>
+                            <ul class="list-convert"></ul>
                         </div>
                     </div>
 
@@ -130,398 +113,430 @@
                 </div>
             </div>
         </section>
-        <div>
-            <a href="#exchange" onclick="showPairs('USD', 'RON')"
-                >Show USD RON</a
-            >
-        </div>
-    </section>
 
-    <section id="live_exchange_rate">
-          <!-- Main title -->
-<h2>Live Exchange Rate</h2>
+        <section id="live_exchange_rate">
+            <!-- Main title -->
+            <h2>Live Exchange Rate</h2>
 
-<!-- Subtitle showing the current date -->
-<h3 id="currentDate"></h3>
+            <!-- Subtitle showing the current date -->
+            <h3 id="currentDate"></h3>
 
-<!-- Base Currency Selection -->
-<div>
-    <!-- the dropdown selector -->
-    <label for="baseCurrency">Base Currency: 1 </label>
+            <!-- Base Currency Selection -->
+            <div>
+                <!-- the dropdown selector -->
+                <label for="baseCurrency">Base Currency: 1 </label>
 
-    <!-- Dropdown to select the base currency -->
-    <select id="baseCurrency" onchange="refreshData()">
-      <option value="EUR" selected>EUR</option>
-      <option value="USD">USD</option>
-      <option value="GBP">GBP</option>
-      <option value="JPY">JPY</option>
-      <option value="AUD">AUD</option>
-    </select>
-</div>
-
-<!-- Main exchange rate table -->
-<table border="1">
-    <!-- Table header defining the columns -->
-    <thead>
-      <tr>
-        <th>Flag</th>
-        <th>Currency</th>
-        <th>Exchange Rate</th>
-        <th>24 Hours</th>
-        <th>7 Days</th>
-        <th>1 Month</th>
-      </tr>
-    </thead>
-
-    <!-- Table body  -->
-    <tbody id="currencyTable">
-    </tbody>
-
-    <!-- Table footer containing buttons to show more or less rows of data -->
-    <tfoot>
-      <tr>
-        <td colspan="6" style="text-align: right;">
-          <!-- Button to show more rows -->
-          <button onclick="showMore()">Show More</button>
-
-          <!-- Button to show less rows -->
-          <button onclick="showLess()">Show Less</button>
-        </td>
-      </tr>
-    </tfoot>
-</table>
-    </section>
-
-    <section id="popular">
-        <div class="popular-container">
-            <p class="popular-title">Most Popular Pairs</p>
-            <div class="grid-container">
-                <a
-                    href="#exchange"
-                    onclick="showPairs('GBP', 'EUR')"
-                    class="item"
-                >
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/gbp.png"
-                    />
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/eur.png"
-                    />
-                    <span class="pop-pairs"
-                        >GBP
-                        <i class="fa-solid fa-arrow-right fa-xs"></i>
-                        EUR</span
-                    >
-                </a>
-
-                <a
-                    href="#exchange"
-                    onclick="showPairs('EUR', 'USD')"
-                    class="item"
-                >
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/eur.png"
-                    />
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/usd.png"
-                    />
-                    <span class="pop-pairs"
-                        >EUR
-                        <i class="fa-solid fa-arrow-right fa-xs"></i>
-                        USD</span
-                    >
-                </a>
-                <a
-                    href="#exchange"
-                    onclick="showPairs('EUR', 'RON')"
-                    class="item"
-                >
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/eur.png"
-                    />
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/ron.png"
-                    />
-                    <span class="pop-pairs"
-                        >EUR
-                        <i class="fa-solid fa-arrow-right fa-xs"></i>
-                        RON</span
-                    >
-                </a>
-                <a
-                    href="#exchange"
-                    onclick="showPairs('SEK', 'EUR')"
-                    class="item"
-                >
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/sek.png"
-                    />
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/eur.png"
-                    />
-                    <span class="pop-pairs"
-                        >SEK
-                        <i class="fa-solid fa-arrow-right fa-xs"></i>
-                        EUR</span
-                    >
-                </a>
-                <a
-                    href="#exchange"
-                    onclick="showPairs('JPY', 'USD')"
-                    class="item"
-                >
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/jpy.png"
-                    />
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/usd.png"
-                    />
-                    <span class="pop-pairs"
-                        >JPY
-                        <i class="fa-solid fa-arrow-right fa-xs"></i>
-                        USD</span
-                    >
-                </a>
-                <a
-                    href="#exchange"
-                    onclick="showPairs('CZK', 'EUR')"
-                    class="item"
-                >
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/czk.png"
-                    />
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/eur.png"
-                    />
-                    <span class="pop-pairs"
-                        >CZK
-                        <i class="fa-solid fa-arrow-right fa-xs"></i>
-                        EUR</span
-                    >
-                </a>
-                <a
-                    href="#exchange"
-                    onclick="showPairs('EUR', 'HUF')"
-                    class="item"
-                >
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/eur.png"
-                    />
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/huf.png"
-                    />
-                    <span class="pop-pairs"
-                        >EUR
-                        <i class="fa-solid fa-arrow-right fa-xs"></i>
-                        HUF</span
-                    >
-                </a>
-                <a
-                    href="#exchange"
-                    onclick="showPairs('TRY', 'EUR')"
-                    class="item"
-                >
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/try.png"
-                    />
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/eur.png"
-                    />
-                    <span class="pop-pairs"
-                        >TRY
-                        <i class="fa-solid fa-arrow-right fa-xs"></i>
-                        EUR</span
-                    >
-                </a>
-                <a
-                    href="#exchange"
-                    onclick="showPairs('GBP', 'CAD')"
-                    class="item"
-                >
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/gbp.png"
-                    />
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/cad.png"
-                    />
-                    <span class="pop-pairs"
-                        >GBP
-                        <i class="fa-solid fa-arrow-right fa-xs"></i>
-                        CAD</span
-                    >
-                </a>
-                <a
-                    href="#exchange"
-                    onclick="showPairs('BRL', 'USD')"
-                    class="item"
-                >
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/brl.png"
-                    />
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/usd.png"
-                    />
-                    <span class="pop-pairs"
-                        >BRL
-                        <i class="fa-solid fa-arrow-right fa-xs"></i>
-                        USD</span
-                    >
-                </a>
-                <a
-                    href="#exchange"
-                    onclick="showPairs('AUD', 'HKD')"
-                    class="item"
-                >
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/aud.png"
-                    />
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/hkd.png"
-                    />
-                    <span class="pop-pairs"
-                        >AUD
-                        <i class="fa-solid fa-arrow-right fa-xs"></i>
-                        HKD</span
-                    >
-                </a>
-                <a
-                    href="#exchange"
-                    onclick="showPairs('MXN', 'BRL')"
-                    class="item"
-                >
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/mxn.png"
-                    />
-                    <img
-                        src="https://currencyfreaks.com/photos/flags/brl.png"
-                    />
-                    <span class="pop-pairs"
-                        >MXN
-                        <i class="fa-solid fa-arrow-right fa-xs"></i>
-                        BRL</span
-                    >
-                </a>
+                <!-- Dropdown to select the base currency -->
+                <select id="baseCurrency" onchange="refreshData()">
+                    <option value="EUR" selected>EUR</option>
+                    <option value="USD">USD</option>
+                    <option value="GBP">GBP</option>
+                    <option value="JPY">JPY</option>
+                    <option value="AUD">AUD</option>
+                </select>
             </div>
-        </div>
-    </section>
 
-    <section id="footer">
-        <footer id="footer">
-            <div class="footer_logo">
-                <div class="logo_btn">
-                    <h2 class="logo>">convertFX</h2>
-                </div>
-                <div class="store-flex">
-                    <span>Download our mobile app for your device</span>
-                    <div class="app-btn">
-                        <a
-                            href="https://play.google.com/store/apps/details?id=com.facebook.katana&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
-                            target="_blank"
+            <!-- Main exchange rate table -->
+            <table border="1">
+                <!-- Table header defining the columns -->
+                <thead>
+                    <tr>
+                        <th>Flag</th>
+                        <th>Currency</th>
+                        <th>Exchange Rate</th>
+                        <th>24 Hours</th>
+                        <th>7 Days</th>
+                        <th>1 Month</th>
+                    </tr>
+                </thead>
+
+                <!-- Table body  -->
+                <tbody id="currencyTable"></tbody>
+
+                <!-- Table footer containing buttons to show more or less rows of data -->
+                <tfoot>
+                    <tr>
+                        <td colspan="6" style="text-align: right">
+                            <!-- Button to show more rows -->
+                            <button onclick="showMore()">Show More</button>
+
+                            <!-- Button to show less rows -->
+                            <button onclick="showLess()">Show Less</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="popular">
+            <div class="popular-container">
+                <p class="popular-title">Most Popular Pairs</p>
+                <div class="grid-container">
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('GBP', 'EUR')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/gbp.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/eur.png"
+                        />
+                        <span class="pop-pairs"
+                            >GBP
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            EUR</span
                         >
-                            <img
-                                class="google"
-                                alt="Get it on Google Play"
-                                src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                        /></a>
+                    </a>
 
-                        <a href="https://apps.apple.com/app/id1551353775" target="_blank">
-                            <img
-                                class="apple"
-                                src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000&h=7e7b68fad19738b5649a1bfb78ff46e9"
-                                alt="Download on the App Store"
-                            />
-                        </a>
-                    </div>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('EUR', 'USD')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/eur.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/usd.png"
+                        />
+                        <span class="pop-pairs"
+                            >EUR
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            USD</span
+                        >
+                    </a>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('EUR', 'RON')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/eur.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/ron.png"
+                        />
+                        <span class="pop-pairs"
+                            >EUR
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            RON</span
+                        >
+                    </a>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('SEK', 'EUR')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/sek.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/eur.png"
+                        />
+                        <span class="pop-pairs"
+                            >SEK
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            EUR</span
+                        >
+                    </a>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('JPY', 'USD')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/jpy.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/usd.png"
+                        />
+                        <span class="pop-pairs"
+                            >JPY
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            USD</span
+                        >
+                    </a>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('CZK', 'EUR')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/czk.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/eur.png"
+                        />
+                        <span class="pop-pairs"
+                            >CZK
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            EUR</span
+                        >
+                    </a>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('EUR', 'HUF')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/eur.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/huf.png"
+                        />
+                        <span class="pop-pairs"
+                            >EUR
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            HUF</span
+                        >
+                    </a>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('TRY', 'EUR')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/try.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/eur.png"
+                        />
+                        <span class="pop-pairs"
+                            >TRY
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            EUR</span
+                        >
+                    </a>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('GBP', 'CAD')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/gbp.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/cad.png"
+                        />
+                        <span class="pop-pairs"
+                            >GBP
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            CAD</span
+                        >
+                    </a>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('BRL', 'USD')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/brl.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/usd.png"
+                        />
+                        <span class="pop-pairs"
+                            >BRL
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            USD</span
+                        >
+                    </a>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('AUD', 'HKD')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/aud.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/hkd.png"
+                        />
+                        <span class="pop-pairs"
+                            >AUD
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            HKD</span
+                        >
+                    </a>
+                    <a
+                        href="#exchange"
+                        onclick="showPairs('MXN', 'BRL')"
+                        class="item"
+                    >
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/mxn.png"
+                        />
+                        <img
+                            src="https://currencyfreaks.com/photos/flags/brl.png"
+                        />
+                        <span class="pop-pairs"
+                            >MXN
+                            <i class="fa-solid fa-arrow-right fa-xs"></i>
+                            BRL</span
+                        >
+                    </a>
                 </div>
             </div>
-            <div class="footer-grid">
-                <div class="footer-left">
-                    <div class="footer-grid1">
+        </section>
+
+        <section id="footer">
+            <footer id="footer">
+                <div class="footer_logo">
+                    <div class="logo_btn">
+                        <h2 class="logo>">
+                            <img src="./assets/images/logo.webp" />
+                        </h2>
+                    </div>
+                    <div class="store-flex">
+                        <!-- <span>Download our mobile app for your device</span> -->
+                        <div class="app-btn">
+                            <a
+                                href="https://play.google.com/store/apps/details?id=com.facebook.katana&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+                                target="_blank"
+                            >
+                                <img
+                                    class="google"
+                                    alt="Get it on Google Play"
+                                    src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                            /></a>
+
+                            <a
+                                href="https://apps.apple.com/app/id1551353775"
+                                target="_blank"
+                            >
+                                <img
+                                    class="apple"
+                                    src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000&h=7e7b68fad19738b5649a1bfb78ff46e9"
+                                    alt="Download on the App Store"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-grid">
+                    <div class="footer-left">
+                        <div class="footer-grid1">
                             <div class="company">
-                        <h3>Company</h3>
-                        <ul>
-                            <a href="#"><li class="about">About</li></a>
-                            <a href="#"><li class="supported">Supported currencies</li></a>
-                            <a href="#"><li class="parteners">Our parteners</li></a>
-                            <a href="#"><li class="reviews">Reviews</li></a>
-                        </ul>
-                    </div>
+                                <h3>Company</h3>
+                                <ul>
+                                    <a href="#"><li class="about">About</li></a>
+                                    <a href="#"
+                                        ><li class="supported">
+                                            Supported currencies
+                                        </li></a
+                                    >
+                                    <a href="#"
+                                        ><li class="parteners">
+                                            Our parteners
+                                        </li></a
+                                    >
+                                    <a href="#"
+                                        ><li class="reviews">Reviews</li></a
+                                    >
+                                </ul>
+                            </div>
 
-                    <div class="support">
-                        <h3>Support</h3>
-                        <ul>
-                         <a href="#"><li class="faq">FAQ</li></a>
-                          <a href="#"><li class="helpdesk">Helpdesk</li></a> 
-                          <a href="#"> <li class="blog">Blog</li></a> 
-                         <a href="#">  <li class="crash">Crash course</li></a> 
-                        </ul>
-                    </div>
+                            <div class="support">
+                                <h3>Support</h3>
+                                <ul>
+                                    <a href="#"><li class="faq">FAQ</li></a>
+                                    <a href="#"
+                                        ><li class="helpdesk">Helpdesk</li></a
+                                    >
+                                    <a href="#"> <li class="blog">Blog</li></a>
+                                    <a href="#">
+                                        <li class="crash">Crash course</li></a
+                                    >
+                                </ul>
+                            </div>
 
-                    <div class="partener">
-                        <h3>For Parteners</h3>
-                        <ul>
-                          <a href="#"><li class="api">API for partners</li></a> 
-                           <a href="#"><li class="program">Affiliate Program</li></a> 
-                           <a href="#"><li class="listings">Listings</li></a> 
-                        </ul>
-                    </div>
+                            <div class="partener">
+                                <h3>For Parteners</h3>
+                                <ul>
+                                    <a href="#"
+                                        ><li class="api">
+                                            API for partners
+                                        </li></a
+                                    >
+                                    <a href="#"
+                                        ><li class="program">
+                                            Affiliate Program
+                                        </li></a
+                                    >
+                                    <a href="#"
+                                        ><li class="listings">Listings</li></a
+                                    >
+                                </ul>
+                            </div>
 
-                    <div class="legal">
-                        <h3>Legal</h3>
-                        <ul>
-                           <a href="#"><li class="terms">Terms of Use</li></a> 
-                           <a href="#"><li class="privacy">Privacy Policy</li></a> 
-                        </ul>
-                    </div>
+                            <div class="legal">
+                                <h3>Legal</h3>
+                                <ul>
+                                    <a href="#"
+                                        ><li class="terms">Terms of Use</li></a
+                                    >
+                                    <a href="#"
+                                        ><li class="privacy">
+                                            Privacy Policy
+                                        </li></a
+                                    >
+                                </ul>
+                            </div>
                         </div>
                         <div class="social-media">
-                        <a href="https://www.facebook.com/"
-                            ><i class="fa-brands fa-facebook" target="_blank"></i
-                        ></a>
-                        <a href="https://www.instagram.com/" target="_blank"
-                            ><i class="fa-brands fa-instagram"></i
-                        ></a>
-                        <a href="https://twitter.com/tweeter" target="_blank">
-                            <i class="fa-brands fa-twitter"></i
-                        ></a>
-                    </div>
-
-                </div>
-                <div class="footer-right">
-                    <div class="newsletter">
-                        <p>Daily market updates straight to your inbox</p>
-                        <form>
-                            <input type="email" placeholder="your.name@gmail.com">
-                            <a href="#">Submit</a>
-                        </form>
-                        <div class="check">
-                        <input type="checkbox">
-                        <label for="input">I have read and agree to all terms and conditions</label>
+                            <a href="https://www.facebook.com/"
+                                ><i
+                                    class="fa-brands fa-facebook"
+                                    target="_blank"
+                                ></i
+                            ></a>
+                            <a href="https://www.instagram.com/" target="_blank"
+                                ><i class="fa-brands fa-instagram"></i
+                            ></a>
+                            <a
+                                href="https://twitter.com/tweeter"
+                                target="_blank"
+                            >
+                                <i class="fa-brands fa-twitter"></i
+                            ></a>
                         </div>
                     </div>
+                    <div class="footer-right">
+                        <div class="newsletter">
+                            <p>Daily market updates</p>
+                            <form>
+                                <input
+                                    name="email"
+                                    type="email"
+                                    placeholder="your.name@gmail.com"
+                                />
+                                <a href="#">Submit</a>
+                            </form>
+                        </div>
 
-                    <div class="reviews">
-                    <p>
-                        Reviews<strong> 758.903</strong> <br />
-                        <strong>4,9 / 5</strong>, Excellent
-                    </p>
-                    <div class="star">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half"></i>
+                        <div class="reviews">
+                            <p>
+                                Reviews<strong> 758.903</strong> <br />
+                                <strong>4,9 / 5</strong>, Excellent
+                            </p>
+                            <div class="star">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="copyright">
-                <hr />
-                <p>©2023 convertFX  All rights reserved</p>
-            </div>
+                <div class="copyright">
+                    <hr />
+                    <p>2023 convertFX © All rights reserved</p>
                 </div>
-            </div>
-        </footer>
-    </section>
-
-</body>
+                <!-- </div> -->
+            </footer>
+        </section>
+    </body>
 </html>

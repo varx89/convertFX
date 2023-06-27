@@ -1,0 +1,183 @@
+::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(73, 70, 70, 0.4);
+    border: 0.2rem white solid;
+    background-clip: padding-box;
+    border-radius: 0.5rem;
+}
+#exchange {
+    display: flex;
+    justify-content: center;
+}
+
+#exchange .exchange-container {
+    margin: 2rem 0px;
+    padding: 2rem 6rem;
+    background-color: rgb(245, 240, 240, 0.9);
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+    width: fit-content;
+    min-width: 23rem;
+}
+@media screen and (max-width: 998px) {
+    #exchange .exchange-container {
+        margin: 2rem 0px;
+        padding: 2rem 0rem;
+        background-color: rgb(245, 240, 240, 0.9);
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 5rem;
+        width: fit-content;
+        min-width: 23rem;
+    }
+}
+#exchange .exchange-container .exchange-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#exchange .exchange-container .exchange-left p {
+    color: #4ca66b;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+#exchange .exchange-container .exchange-left #typewriter {
+    color: rgb(76, 166, 107, 0.8);
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-shadow: #807e7e 1px 0 20px;
+}
+#exchange .exchange-container .exchange-image img {
+    max-width: 30rem;
+    width: 24rem;
+}
+#exchange .exchange-container .exchange-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+#exchange .exchange-wrapper .exchange-amount {
+    margin: 0.2rem 1rem;
+    padding: 1rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    border-radius: 0.5rem;
+    position: relative;
+}
+#exchange .exchange-wrapper .exchange-amount p {
+    font-size: 0.8rem;
+    color: rgb(145, 143, 143);
+    /* text-align: end; */
+}
+#exchange .exchange-wrapper .exchange-amount .current-ex-wrap {
+    display: flex;
+    gap: 0.3rem;
+}
+#exchange .exchange-wrapper .exchange-amount .current-select {
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: rgb(245, 240, 240, 0.9);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+#exchange .exchange-wrapper .exchange-amount .current-select img {
+    border-radius: 50%;
+    width: 2rem;
+}
+.list-img {
+    border-radius: 50%;
+    width: 2rem;
+}
+#exchange .exchange-wrapper .exchange-amount .ex-amount-input {
+    outline: none;
+    text-align: end;
+    padding-right: 0.3rem;
+    font-size: 1.2rem;
+    border: 1px solid rgb(245, 240, 240, 0.9);
+    border-radius: 0.5rem;
+    width: max-content;
+}
+
+#exchange .exchange-wrapper .list-amount,
+#exchange .exchange-wrapper .list-convert {
+    width: max-content;
+    box-sizing: border-box;
+    padding: 1rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    border-radius: 0.5rem;
+    overflow-y: scroll;
+    height: 18rem;
+    box-shadow: -2px 0px 23px 0px rgba(0, 0, 0, 0.28);
+    z-index: 1;
+    position: absolute;
+}
+#exchange .exchange-wrapper .list-amount-show,
+#exchange .exchange-wrapper .list-convert-show {
+    visibility: visible;
+}
+#exchange .exchange-wrapper .list-amount-show-none,
+#exchange .exchange-wrapper .list-convert-show-none {
+    visibility: hidden;
+}
+
+#exchange .exchange-wrapper .currency-item-am,
+#exchange .exchange-wrapper .currency-item-conv {
+    cursor: pointer;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+}
+#exchange .exchange-wrapper .currency-item-am:hover,
+#exchange .exchange-wrapper .currency-item-conv:hover {
+    background-color: rgb(245, 240, 240, 0.9);
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+}
+#exchange .exchange-wrapper .exchange-rate {
+    margin: 0.2rem 1rem;
+    padding: 1rem;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.2rem;
+    border-radius: 0.5rem;
+    position: relative;
+}
+#exchange .exchange-wrapper .exchange-button {
+    color: white;
+    margin: 0.2rem 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #4ca66b;
+    border: 1px solid #4ca66b;
+    font-size: 1.1rem;
+    box-shadow: -2px 0px 23px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+#exchange .exchange-wrapper .exchange-button:hover {
+    background-color: rgb(76, 166, 107, 0.9);
+}
