@@ -8,7 +8,6 @@
         <link rel="stylesheet" href="./assets/styles/live-exchange.css" />
         <link rel="stylesheet" href="./assets/styles/popular.css" />
         <link rel="stylesheet" href="./assets/styles/footer.css" />
-
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -16,8 +15,8 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
-
-        <script src="./assets/scripts/live.js"></script>
+        <script defer src="./assets/scripts/exchange.js"></script>
+        <script defer src="./assets/scripts/live.js"></script>
         <title>convertFX - Ultimate Currency Converter</title>
     </head>
     <body>
@@ -29,8 +28,11 @@
 
                 <div class="buttonsHS">
                     <a href="#" class="buttonsHS">Home</a>
-                    <a href="#" class="buttonsHS">Exchange</a>
-                    <a href="#" class="buttonsHS">Popular Pairs</a>
+                    <a href="#exchange" class="buttonsHS">Exchange</a>
+                    <a href="#live-exchange-rate" class="buttonsHS"
+                        >Live Rates</a
+                    >
+                    <a href="#popular" class="buttonsHS">Popular Pairs</a>
                 </div>
 
                 <div class="buttons">
@@ -43,7 +45,7 @@
         <section id="exchange">
             <div class="exchange-container">
                 <div class="exchange-left">
-                    <p>convertFX Currency Exchange</p>
+                    <h1>convertFX Currency Exchange</h1>
                     <div class="exchange-image">
                         <img src="./assets/images/exchange-image.png" />
                     </div>
@@ -114,7 +116,7 @@
             </div>
         </section>
 
-        <section id="live_exchange_rate">
+        <section id="live-exchange-rate">
             <!-- Main title -->
             <h2>Live Exchange Rate</h2>
 
@@ -510,9 +512,9 @@
                                 <input
                                     name="email"
                                     type="email"
-                                    placeholder="your.name@gmail.com"
+                                    placeholder="name@gmail.com"
                                 />
-                                <a href="#">Submit</a>
+                                <a href="#">Subscribe</a>
                             </form>
                         </div>
 

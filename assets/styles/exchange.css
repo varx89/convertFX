@@ -14,23 +14,33 @@
 }
 
 #exchange .exchange-container {
-    margin: 2rem 0px;
+    /* margin: 2rem 0px; */
     padding: 2rem 6rem;
-    background-color: rgb(245, 240, 240, 0.9);
+    background: linear-gradient(
+        90deg,
+        rgba(244, 244, 244, 0.1) 5%,
+        rgba(244, 244, 244, 1) 50%,
+        rgba(244, 244, 244, 0.1) 95%
+    );
     border-radius: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 5rem;
-    width: fit-content;
+    width: 100vw;
     min-width: 23rem;
 }
 @media screen and (max-width: 998px) {
     #exchange .exchange-container {
         margin: 2rem 0px;
         padding: 2rem 0rem;
-        background-color: rgb(245, 240, 240, 0.9);
+        /* background: linear-gradient(
+            90deg,
+            rgba(244, 244, 244, 0.1) 5%,
+            rgba(244, 244, 244, 1) 50%,
+            rgba(244, 244, 244, 0.1) 95%
+        ); */
         border-radius: 0.5rem;
         display: flex;
         justify-content: center;
@@ -47,16 +57,16 @@
     justify-content: center;
     align-items: center;
 }
-#exchange .exchange-container .exchange-left p {
-    color: #4ca66b;
-    font-size: 1.2rem;
+#exchange .exchange-container .exchange-left h1 {
+    color: #66cdaa;
+    font-size: 1.6rem;
     font-weight: bold;
 }
 #exchange .exchange-container .exchange-left #typewriter {
-    color: rgb(76, 166, 107, 0.8);
+    color: #66cdaa;
     font-size: 1.1rem;
     font-weight: bold;
-    text-shadow: #807e7e 1px 0 20px;
+    /* text-shadow: #807e7e 1px 0 20px; */
 }
 #exchange .exchange-container .exchange-image img {
     max-width: 30rem;

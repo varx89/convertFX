@@ -1,7 +1,7 @@
 :root {
     --background: #495057;
     --text: #adb5bd;
-    --text1: #212529;
+    --text1: #66cdaa;
 }
 /* * {
     margin: 0;
@@ -195,27 +195,32 @@ body {
 }
 
 .newsletter form input {
-    padding-left: 2rem;
+    padding-left: 0.2rem;
     font-size: 1rem;
     color: var(--text1);
-    width: 50%;
-    height: 65%;
+    width: 10rem;
+    height: 2rem;
     margin-top: 2rem;
-
     border-radius: 0.5rem;
-    border: 0.2rem solid var(--text1);
+    border: 0.1rem solid var(--text1);
 }
 .newsletter form a {
     font-size: 1rem;
     color: var(--text);
-    background: var(--text1);
-    width: 30%;
-    height: 65%;
+    background: var(--background);
+    width: 5rem;
+    height: 2rem;
+    display: flex;
     align-items: center;
     margin-top: 2rem;
+    margin-left: 0.2rem;
 
     border-radius: 0.5rem;
-    border: 0.2rem solid var(--text);
+    border: 0.1rem solid var(--text1);
+}
+.newsletter form a:hover {
+    background-color: var(--text1);
+    color: var(--background);
 }
 footer a {
     text-align: center;
@@ -229,9 +234,7 @@ footer li {
     list-style: none;
     font-size: 1rem;
 }
-.newsletter form a:hover {
-    background-color: #000;
-}
+
 .check {
     margin-bottom: 25rem;
 }

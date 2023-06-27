@@ -8,7 +8,20 @@
   color: #333;
 } */
 
-#live_exchange_rate {
+#live-exchange-rate {
+    text-align: center;
+    margin: 2rem 2rem;
+}
+#live-exchange-rate label {
+    color: rgb(73, 80, 87, 0.7);
+    font-weight: bold;
+}
+#live-exchange-rate #baseCurrency {
+    color: rgb(73, 80, 87, 0.7);
+    font-weight: bold;
+    height: 1.7rem;
+    width: 4rem;
+    outline: none;
     text-align: center;
 }
 
@@ -35,7 +48,8 @@ table {
     margin: 1em auto;
     border-collapse: collapse;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    border: 1px solid black;
+    border: 1px solid rgb(228, 222, 222);
+    text-align: center;
 }
 
 /* Styling for the table header */
@@ -50,7 +64,7 @@ th,
 td {
     padding: 12px 15px;
     text-align: left;
-    border-bottom: 1px solid;
+    border: 1px solid rgb(228, 222, 222);
 }
 
 /* Styling for the table footer */
