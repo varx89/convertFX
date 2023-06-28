@@ -89,6 +89,12 @@ const dropExList = async () => {
     const listEX = document.getElementsByClassName('list-amount')[0];
     let apiObj = Object.assign({}, await getCurrencies());
 
+    const listWithout = document.getElementById('conv-currency');
+
+    if (Object.keys(apiObj).includes(listWithout)) {
+        delete apiObj[listWithout.textContent];
+    }
+
     for (obj in apiObj) {
         const li = document.createElement('li');
         li.setAttribute('class', 'currency-item-am');

@@ -61,7 +61,7 @@ header {
 
 .buttonsHS {
     background-color: #dcdcdc;
-    color: #ffffff;
+    color: #969393;
     display: flex;
     align-items: right;
     justify-content: center;
@@ -82,7 +82,7 @@ header {
 
 .button {
     background-color: #dcdcdc;
-    color: #ffffff;
+    color: #969393;
     padding: 8px 12px;
     border-radius: 20px;
     margin-left: 10px;
